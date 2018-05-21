@@ -20,7 +20,30 @@ module.exports = {
 					"css-loader",
 					"sass-loader",
 				]
+            },
+            {
+				test: /\.svg$/,
+				use: {loader: 'svg-url-loader',
+				options: {
+					limit: 1000 * 1024,
+					enforce: 'pre',
+					noquotes: true,
+				}}
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				use: [
+					'file-loader'
+				],
 			},
         ]
-    }
+    },
+    plugins: [
+		new HtmlWebpackPlugin({template: "./src/index.html"}),
+		new CleanWebpackPlugin(['dist']),
+		new MiniCSSExtractPlugin({
+			filename: "[name].[hash].css",
+			chunkFilename: "[id].css"
+		})
+	],
 }
