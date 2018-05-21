@@ -42,7 +42,9 @@ module.exports = {
         ]
     },
     plugins: [
-		new HtmlWebpackPlugin({template: "./src/index.html"}),
+        //creates a html file with correct hashed names using a templat
+        new HtmlWebpackPlugin({template: "./src/index.html"}),
+        //deletes the dist folder
 		new CleanWebpackPlugin(['dist']),
 		new MiniCSSExtractPlugin({
 			filename: "[name].[hash].css",
