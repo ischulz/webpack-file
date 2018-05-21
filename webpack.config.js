@@ -6,5 +6,13 @@ module.exports = {
 		filename: '[hash].bundle.js',
 		path: path.resolve(__dirname, 'dist')
     },
-    module: {}
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+				exclude: /node-modules/,
+				use: ["babel-loader"]
+            }
+        ]
+    }
 }
