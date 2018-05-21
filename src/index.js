@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import "./testcss.css";
 import "./testsass.scss";
-import Icon from './icon.png';
-import svgLarge from "./Arctic_big.svg";
-import svgSmall from "./small_svg.svg";
+import Icon from '../icon.png';
+import svgLarge from "../Arctic_big.svg";
+import svgSmall from "../small_svg.svg";
 
 function component() {
 	var element = document.createElement('div');
